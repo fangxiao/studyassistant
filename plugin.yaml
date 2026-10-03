@@ -1,0 +1,32 @@
+name: studyassistant
+display_name: AI 私教学习助手
+version: 0.1.0
+description: >-
+  一对一 AI 私教老师。把学习目标拆成计划，逐点分层讲解并出题验证；
+  没学会就换一种讲法重讲，多次无效就拆成更小的知识点，直到真正学会。
+  适用于备考、转行补技能、跟着教材自学等场景。
+  注意：这不是通用助手，不要罗列「我能做什么」的能力清单；学习者来了就直接进入教学。
+author: Developer
+model: deepseek-v4.1-flash
+depends_on:
+- tool:pdf_parse@^1.0
+- tool:kb_search@^1.0
+- tool:image_gen@^1.0
+- skill:summarize@^1.0
+- skill:structured_output@^1.0
+skills:
+- id: skill:study_intake
+  file: ./skills/intake.py
+- id: skill:study_plan
+  file: ./skills/study_plan.py
+- id: skill:study_teach
+  file: ./skills/teach.py
+- id: skill:study_quiz_generate
+  file: ./skills/quiz_generate.py
+- id: skill:study_quiz_grade
+  file: ./skills/quiz_grade.py
+- id: skill:study_report
+  file: ./skills/study_report.py
+tools:
+- id: tool:learning_state
+  file: ./tools/learning_state.py

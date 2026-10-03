@@ -1,0 +1,15 @@
+[project]
+name = "studyassistant"
+version = "0.1.0"
+description = "studyassistant - AgentPlatform 智能体插件"
+requires-python = ">=3.10"
+dependencies = [
+    "agentplatform>=0.1.0",
+    "pyyaml>=6.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]

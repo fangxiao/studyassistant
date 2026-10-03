@@ -1,0 +1,32 @@
+# 自动化测试用例 (供 agentplatform test 执行)
+#
+# 覆盖主路径：建档 → 讲解 → 验证 → 未达标换角度重讲 → 达标推进 → 报告。
+tests:
+  - name: "建档：给出学习目标后产出学习计划"
+    input: "我想学线性代数，零基础，每天能学 40 分钟，帮我制定一个学习计划"
+    expect_contains:
+      - "知识点"
+
+  - name: "讲解：一次只讲一个知识点"
+    input: "开始学第一个知识点吧，讲详细一点"
+    expect_contains: []
+
+  - name: "验证：出题检验是否学会"
+    input: "我准备好了，出题考考我"
+    expect_contains: []
+
+  - name: "未掌握：答错后换一种讲法重讲"
+    input: "我答错了，还是没太明白，换个方式再讲一遍"
+    expect_contains: []
+
+  - name: "进度：查看当前学习进度"
+    input: "我现在学到哪了？整体进度怎么样"
+    expect_contains: []
+
+  - name: "报告：生成阶段性学习报告"
+    input: "帮我出一份目前的学习报告"
+    expect_contains: []
+
+  - name: "续学：关掉会话后继续上次的进度"
+    input: "继续学上次的"
+    expect_contains: []
